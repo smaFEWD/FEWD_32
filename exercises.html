@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	
+	#homework {
+		color: red;
+	}
+</style>
+  <title>JS Exercises</title>
+   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+</head>
+<body>
+<div class="container">
+<h1>String operations- Concatenation</h1>
+
+	<div>Exercise 1 (in class) :  Create a function that does String Opertions.  Create three prompts user needs to ask for first name, last name, and what they like to do for fun. Alert to the user the complete sentence, combining their first name, last name, and what they like to do for fun </div>
+
+<pre><code>
+	function doStringOperations() {
+	  var first = prompt("What is your first name?");
+	  var last = prompt("What is your last name?");
+	  var fun = prompt("What do you like to do for fun?");
+	  alert(first+ " "+ last +" " + "likes to " +fun);
+	}
+</code></pre>
+
+<h1>Math Operations</h1>
+	<div>Exercise 2 (in class) : Create a function that adds two numbers and returns the value either in console.log or via an alert</div>
+
+<pre><code>
+	function addTwoNumbers() {
+  		var num1 = parseInt(prompt("Give me a number"));
+  		var num2 = parseInt(prompt("Give me a second number"));
+  		return num1 + num2;
+	}
+</code></pre>
+
+<div id="homework">Exercise 2 (homework):  
+
+	<p>1.)  Now, refactor the above function that does the same thing, but instead of prompting the user, you will take in 2 parameters.  Return the sum.</p>
+
+	<p>2.)  Create a NEW function called "addTwoNumbersChained" and within the function body, call the addTwoNumbers() function and passing in 1, 2 as arguments and store that value into a new variable called "sum". </p>
+
+	<p>3.)  Create another variable called "anotherSum" and set that equal to your "sum" + addTwoNumbers(), passing in 3,4 as arguments. </p>
+
+	<p>4.) Return "anotherSum"</p>
+
+</div>
+
+<h1>Averages Math Operations</h1>
+	<div>Exercise 3:  Create a function that computes the average age of three people.  You can choose to create this function by passing in arguments or asking user for their ages. </div>
+
+<pre><code>
+	function computeAverageAge() {
+	  var firstAge = 32;
+	  var secondAge = 44;
+	  var thirdAge = 26;
+
+	  var average = (firstAge + secondAge + thirdAge) / 3;
+	  console.log(average);
+	}
+</code></pre>
+
+<h1>Find the Max Age </h1>
+	<div> Exercise 4: Create a function that takes in ages from 4 users and computes the max age of all the users.
+	Example output: 
+	Alert out "The oldest person in this group is: 45 years old."
+	</div>
+
+<pre><code>
+	function computeMaxAge() {
+	  var firstAge = 32;
+	  var secondAge = 44;
+	  var thirdAge = 26;
+
+	  var maxAge = -1;
+
+	  if (firstAge > maxAge) {
+	    maxAge = firstAge;
+	  }
+
+	  if (secondAge > maxAge) {
+	    maxAge = secondAge;
+	  }
+
+	  if (thirdAge > maxAge) {
+	    maxAge = thirdAge;
+	  }
+	  
+	  console.log(maxAge);
+	}
+</code></pre>
+
+<h1>Is the number even? </h1>
+	<div>	Exercise 5: Create a function that takes in a number and alerts out if the number is even or odd.</div>
+
+<pre><code>
+	function evenOdd() {
+		var num = parseInt(prompt("Give me a number please"));
+		if (numb%2 ==0){
+			alert ("Your number is even");
+			
+		} else {
+			alert("Your number is odd");
+			
+		}
+	}
+</code></pre>
+
+ <h1>Console Log the Day of the week  </h1>
+	<div>Exercise 6: Create a function that takes in the "day" of the week in as a a number, but console.logs out the day of the week in words.
+
+	<p>	if the user puts "7"-- then it would say:  Example: "Today is Sunday" </p></div>
+
+<pre><code>
+	function smartGreeting(dayOfWeek) {
+	  if (dayOfWeek == 1) {
+	    console.log('Happy Monday');
+	  } else if (dayOfWeek == 2) {
+	    console.log('Happy Tuesday');
+	  } else if (dayOfWeek == 3) {
+	    console.log('Happy Wednesday');
+	  } else {
+	    // Of course you can continue to check for Thursday, Friday, Saturday, Sunday ...
+	    console.log('It is neither Monday nor Tuesday nor Wednesday');
+	  }
+	}
+</code></pre>
+ 
+
+<h1>Getting into the bar </h1>
+	<div>Exercise 7: Create a function asks for the gender of the patron and their age.If they are female and over the age of 21, then they are allowed into the bar.  console.log the message:  "Come on in!" If they don't fit criteria, then say "we are closed!" </div>
+
+<!-- This function is using parameters and not prompts. -->
+
+<pre><code>
+	function letInBar(gender, age) {
+	  // Let in bar if female and 21 and over.
+	  if (age >= 21 && gender == 'f') {
+	    console.log('Let em in!');
+	  } else {
+	    console.log('We are closed!');
+	  }
+
+	}
+</code></pre>
+
+<pre><code>
+//here is another decision structure. 
+
+	function classify(gender, age) {
+	  if (gender == 'male') {
+	    if (age < 21) {
+	      console.log('Underage male.');
+	    } else if (age >= 21) { // This could also just be 'else'.
+	      console.log('Adult male.');
+	    }
+	  } else if (gender == 'female') {
+	    if (age < 21) {
+	      console.log('Underage female.');
+	    } else if (age >= 21) { // This could also just be 'else'.
+	      console.log('Adult female.');
+	    }
+	  } else {
+	    console.log('Unknown.');
+	  }
+	}
+
+</code></pre>
+ 
+<h1>Getting ticket prices  </h1>
+	<div>Exercise 8: Create a function that asks the user the "from" and "to" that they are flying to.
+(create an alert to tell them there is an error if "to" and "from" are the same)
+(we only want flight prices between sfo, lax, and nyc)
+
+different prices for different cities is preferable (sfo - lax == $400, vs lax to nyc is $500 vs nyc to sfo is $700 for instance.  )
+
+try to use: "==" "!=" "&&"  "||" </div>
+
+	<div id="homework"> Exercise 8 (homework)
+		<p>1.)  Try to refactor your current code to include all potential possibilities.  As a programmer, you want to be able to anticipate and mitigate problems from user input.  Restricting the user based on instructions assumes the user will follow your instructions.</p>
+
+		<p>2.)  If you didn't use any nested "if's" review the version of this code and see if you can code a similar version in your refactoring.</p>
+	</div>
+
+<pre><code>
+  
+  function getFlightCost(from, to) {
+	  // Error handling.
+	  if (from == to) {
+	    return 'Are you that bored?';
+	  }
+
+	  if (from != 'sfo' && from != 'jfk' && from != 'lax') {
+	    return 'Unrecognized FROM city.';
+	  }
+
+	  if (to != 'sfo' && to != 'jfk' && to != 'lax') {
+	   return 'Unrecognized TO city.'; 
+	  }
+
+	  if (from == 'sfo') {
+	    if (to == 'jfk') {
+	      // Flying from SFO to JFK. Feel free to make up the price.
+	      return 537.34;
+
+	    } else if (to == 'lax') {
+	      // Flying from SFO to LAX. Feel free to make up the price.
+	      return 137.34;
+	    }
+	  } else if (from == 'jfk') {
+	      return 145.65;
+	  } else if (from == 'lax') {
+	      return 345.67
+	  }
+	}
+
+</code></pre>
+
+	<h1>Exercise 9 (homework)-using "indexOf" string method. </h1>
+		<div id="homework"> 
+		<p>1.) Read through this short documentation on the string method <a href="http://www.w3schools.com/jsref/jsref_indexof.asp" target ="_blank">"indexOf"</a> Pay close attention to what it would return if the value to what you are searching for never occurs.</p>
+
+		<p>2.)  Create a function named "contains" that takes in two parameters (string, subString).  Conditionally set it to return false if the value of the subString is not found and would return true if found.</p>
+
+		<p>3.)  Now create a new function called "validate" that takes in three parameters(firsname, lastname, email) and using the above function ("contains"), --create this new "validate" function to return true or false when the email address entered is valid.  (typical email address has : name@email.com format)  What are you checking for in this "validate" function?s </p>
+	</div>
+
+	<div>When you are done with this assignment, please explore in MDN <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String Methods</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target ="_blank">Number Methods</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math Properties and Methods </a> to get more familiar with the tools, functions, and methods that are available. </div>
+</div>
+</body>
+</html>
