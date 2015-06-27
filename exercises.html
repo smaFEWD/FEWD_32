@@ -6,6 +6,9 @@
 	#homework {
 		color: red;
 	}
+	#answer {
+		color: blue;
+	}
 </style>
   <title>JS Exercises</title>
    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
@@ -48,6 +51,26 @@
 
 </div>
 
+<h3 id="answer">One answer to Exercise #2</h3>
+<div>
+<pre><code>
+	// After console.logging out sum, we show that a function call can itself
+	// be used as part of a broader expression. So we add sum to the return 
+	// value of addTwoNumbers(3, 4) to illustrate this. The grand total sum
+	// is stored in anotherSum then console.logged.
+
+	function addTwoNumbersChained() {
+	  var sum = addTwoNumbers(1, 2);
+	  console.log(sum);
+
+	  // Catching the return value, calling a function as part of an
+	  // arithmetic expression.
+
+	  var anotherSum = sum + addTwoNumbers(3, 4);
+	  console.log(anotherSum);
+	}
+</code></pre>
+</div>
 <h1>Averages Math Operations</h1>
 	<div>Exercise 3:  Create a function that computes the average age of three people.  You can choose to create this function by passing in arguments or asking user for their ages. </div>
 
@@ -226,6 +249,43 @@ try to use: "==" "!=" "&&"  "||" </div>
 
 		<p>3.)  Now create a new function called "validate" that takes in three parameters(firsname, lastname, email) and using the above function ("contains"), --create this new "validate" function to return true or false when the email address entered is valid.  (typical email address has : name@email.com format)  What are you checking for in this "validate" function?s </p>
 	</div>
+
+<h3 id="answer"> One answer to Exercise 9</h3>
+<div>
+	<pre><code>
+	// Another common string function, indexOf which returns -1 if the
+	// search string is not found, otherwise a value >= 0 if it is found.
+	// We use this to implement a "contains" function.
+	
+	function contains(string, searchString) {
+	  if (string.indexOf(searchString) == -1) {
+	    return false;
+	  } else {
+	    return true;
+	  }
+	}
+
+	//This is a naive form validator. While there's some holes in its logic,
+	// students can relate to the idea of checking to see if values are blank,
+	// and using contains() to see if both @ and . exist.
+	
+	function validate(firstName, lastName, email) {
+	  if (firstName == '') {
+	    return false;
+	  }
+	  if (lastName == '') {
+	    return false;
+	  }
+	  if (contains(email, '@') == false) {
+	    return false;
+	  }
+	  if (contains(email, '.') == false) {
+	    return false;
+	  }
+	  return true;
+	}
+	</code></pre>
+</div>
 
 	<div>When you are done with this assignment, please explore in MDN <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String Methods</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target ="_blank">Number Methods</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math Properties and Methods </a> to get more familiar with the tools, functions, and methods that are available. </div>
 </div>
