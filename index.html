@@ -46,10 +46,10 @@
                 </li>
                 <li>
                     <a href="#week-6">Week 6</a>
-                </li>
-                <li>
-                    <a href="#week-5">Week 5</a>
                 </li> -->
+                <li>
+                    <a href="#week-5">Week 5- <a href= target="_blank">Homework to be posted!</a></a>
+                </li> 
                 <li>
                     <a href="#week-4">Week 4- <a href="exercises.html" target="_blank">Homework!</a></a>
                 </li> 
@@ -79,6 +79,78 @@
                 </ul>
             </p>
 
+        <h2 id="week-5">Week 5</h2>
+                <p>
+                    Today, we worked on understanding: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#Array_comprehensions" target="_blank">arrays,</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement" target="_blank">"for loops", </a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects" target="_blank">objects.</a> </p> 
+
+                 <p> Additionally, we covered a <a href="exercises.html" target="_blank">brief review of the homework</a> from <a href="week-4"> Week 4</a> with emphasis of chaining functions within functions <a href="http://www.w3schools.com/jsref/jsref_indexof.asp" target ="_blank">(using indexOf method)</a> and also <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#if...else_statement" target = "_blank">control flow/error handling within the if/else statements.</a>
+                </p>
+
+        <h3>Arrays</h3>
+
+            <p>In javascript, when we want to store a list of things, we use an object called <code>Array</code>.  Arrays can be created in javascript using square braces (<code>[</code>) like so: <code>['Andy', 'Sandi', 'Nick']</code></p>
+
+            <p>Like the other javascript objects we've looked at so far, Arrays have properties and methods that you'll probably find useful:</p>
+
+            <ul>
+                <li>
+                    properties:
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length">length</a>: a count of the number of items in the array</li>
+                    </ul>
+                </li>
+                <li>
+                    methods:
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank">push</a>: adds an item to the array</li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop" target="_blank">pop</a>: removes an item from the array</li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank">sort</a>: sorts the items in the array</li>
+                    </ul>
+                </li>
+            </ul>
+
+        <h3>For Loops</h3>
+
+            <p>In javascript, when we want to execute some code some number of times, we use a <code>for</code> loop.  <code>for</code> loops are particularly helpful for doing something with each item in an array.</p>
+
+            <p>For example, the following code will print to the console the index # of the array and the corresponding "string" in that array.</code>:</p>
+
+            <pre><code>var instructors = ['Andy', 'Sandi', 'Nick'];<br/>&nbsp;&nbsp;for (var i = 0; i < instructors.length; i++) {<br/>&nbsp;&nbsp;&nbsp;console.log(i);<br/>&nbsp;&nbsp;&nbsp;console.log(instructors[i]);<br/>}</code></pre>
+
+        <h3>Objects</h3>
+
+            <p>Objects are a very important data type in javascript.  Objects can be stored in variables like other data types, and they themselves can contain more values as <strong>key value pairs</strong>. Here's an example of assigning an object to a variable:</p>
+
+            <pre><code>var myPerson = {<br/>&nbsp;&nbsp;firstName: null,<br/>&nbsp;&nbsp;lastName:null<br/>};</code></pre>
+
+            <p>Object values can be accessed using a period (<code>.</code>), like so:</p>
+
+            <pre><code>console.log(myPerson.firstName);</code></pre>
+
+            <p>Objects can even contain code in the form of functions.  Here's an example of how you can add a function to the above object:</p>
+
+            <pre><code>myPerson.getFullName = function() {<br/>&nbsp;&nbsp;return this.firstName + ' ' + this.lastName;<br/>};</code></pre>
+
+            <p><code>this</code> in the above example is a very special variable in javascript. In this case it refers to the object myPerson because the function is attached to that object.</p>
+
+        <h3>Objects Redux</h3>
+
+            <p>Objects are how we represent things in javascript.  It turns out that everything in javascript is an object. For example, a string is an object with a property called <code>length</code> that contains the length of the string as an integer.  It's accessible like any other object property: <code>myString.length</code></p>
+
+            <p>Here are some important JS objects that we've already worked with, peruse their many properties and methods at your leisure:</p>
+
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">string</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">boolean</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window" target="_blank">window</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/document" target="_blank">document</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element" target="_blank">element</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event" target="_blank">event</a></li>
+            </ul>
+
+            <p>You won't ever need to know all of the methods and properties on these objects, but it's important to know where to find them when you begin to wonder "How do I do...?"  As you use these objects, you'll learn the super useful ones really quickly.</p>
+        
              <h2 id="week-4">Week 4</h2>
                 <p>
                     Today, we worked on:  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" target="_blank">functions,</a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">conditionals using if, else if, and else statements,</a> and worked with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators" target="_blank">logical operators.</a> 
@@ -94,14 +166,97 @@
 
                 </ul> 
                 
-            <h2 id="week-3">Week 3</h2>
+        <h3>Conditionals</h3>
+
+            <p>Conditionals are how we branch our code based on some condition in programming languages.</p>
+
+            <p>Often times, the condition in a conditional is based on a comparison of some values. In javascript, we use the following operators to compare values:</p>
+
+            <ul>
+                <li><code>==</code> (or <code>===</code>): equal to</li>
+                <li><code>!=</code> (or <code>!==</code>): not equal to</li>
+                <li><code>&gt;</code>: greater than</li>
+                <li><code>&gt;=</code>: greater than or equal to</li>
+                <li><code>&lt;</code>: less than</li>
+                <li><code>&lt;=</code>: less than or equal to</li>
+            </ul>
+
+            <p>Conditionals are simply blocks of code wrapped in some condition statement.  If this statement is <code>true</code>, then the code executes, otherwise it does not. They also provide a way to include alternative logic in an <code>else</code> block.  In javascript, they look something like this:</p>
+
+            <pre><code>var a = 1;<br/>var b = 2;<br/>if (a === b) {<br/>&nbsp;&nbsp;// this will NOT execute...:<br/>&nbsp;&nbsp;alert('how could this be!?!?!');<br/>} else {<br/>&nbsp;&nbsp;// ...but this will execute:<br/>&nbsp;&nbsp;alert('naturally...');<br/>}</code></pre>
+
+            <p>Comparisons return booleans.  We can combine booleans using the <code>&&</code> (and) and <code>||</code> (or) operators.  The following tables show how these operators will combine different boolean values:</p>
+
+            <table class="table">
+                <tr>
+                    <th><code>&&</code> (and)</th>
+                    <th>true</th>
+                    <th>false</th>
+                </tr>
+                <tr>
+                    <th>true</th>
+                    <td>returns <code>true</code></td>
+                    <td>returns <code>false</code></td>
+                </tr>
+                <tr>
+                    <th>false</th>
+                    <td>returns <code>false</code></td>
+                    <td>returns <code>false</code></td>
+                </tr>
+            </table>
+
+            <table class="table">
+                <tr>
+                    <th><code>||</code> (or)</th>
+                    <th>true</th>
+                    <th>false</th>
+                </tr>
+                <tr>
+                    <th>true</th>
+                    <td>returns <code>true</code></td>
+                    <td>returns <code>true</code></td>
+                </tr>
+                <tr>
+                    <th>false</th>
+                    <td>returns <code>true</code></td>
+                    <td>returns <code>false</code></td>
+                </tr>
+            </table> 
+
+        <h2 id="week-3">Week 3</h2>
 
                 <ul>
                      <li><a href="https://developer.chrome.com/devtools/docs/console" target="_blank" >Developer Tools - Chrome - Using the Console</a></li>
                   
                 </ul>
+                <h3>Why do we need programming languages?</h3>
 
-                  <h3>Functions</h3>
+            <ul>
+                <li><strong>branching/condtionals</strong>: if a certain state is observed, do a thing</li>
+                <li><strong>loops</strong>: doing the same thing to a whole list of things</li>
+                <li><strong>input/output</strong>: consuming data and doing something with it</li>
+            </ul>
+
+            <h3>Variables</h3>
+
+            <p>In programming languages, information is stored in things called variables.</p>
+
+            <p>in Javascript variables are created using the keyword <code>var</code>.  For example: <code>var x = 1;</code></p>
+
+            <p>Variables can store different types of data, for example:</p>
+
+            <ul>
+                <li><strong>Numbers</strong>: sometimes called integers (without a decimal) and floats (with a decimal).  In Javascript we just call them all numbers</li>
+                <li><strong>Strings</strong>: some text, programming languages like Javascript are good at manipulating text</li>
+            </ul>
+
+        <h3>Operators</h3>
+
+            <p>In the above example (<code>var x = 1;</code>), we call the equals sign (<code>=</code>) the "operator".  The operator <code>=</code> assigns a value to a variable.  The above example assigns the value <code>1</code> to the variable <code>x</code>.</p>
+
+            <p>There are other operators used to manipulate values, for example: <code>+</code>, <code>-</code>, <code>*</code>, etc.</p>
+
+        <h3>Functions</h3>
 
             <p>Functions fundamentally have three parts:</p>
 
@@ -127,7 +282,7 @@
                 <li><code>prompt</code></li>
             </ul>
 
-            <h3>Javascript Language Rules</h3>
+        <h3>Javascript Language Rules</h3>
 
             <ul>
                 <li>Lines end with a semicolon (<code>;</code>)</li>
@@ -135,7 +290,7 @@
                 <li>Variable names can't start with numbers, but they can contain numbers.</li>
                 <li>Variable names should be camel case for example: <code>forExample</code></li>
             </ul>
-            <h2 id="week-2">Week 2</h2>
+        <h2 id="week-2">Week 2</h2>
                 <p>
                     Today, we worked on:  review of HTML, CSS, DOM, Box Model.  We went into a more detailed discussion ID's, Class'es pertaining to HTML and CSS, and Bootstrap.   <a href="https://docs.google.com/presentation/d/1BzdgbyXv6i0aH6NtJ_373g0lKXjfyg1hY96Etd1yqBE/edit?amp;authuser=0#slide=id.g8932864ea_1_44" target ="_blank">(Please see the updated powerpoint deck) </a>
                 </p>
@@ -146,7 +301,7 @@
                      <li><a href="http://bit.ly/1cE6sXu" >Zip File for Parse Product Landing Page - in class Lab</a></li>
                      <li><a href="http://generaltzou.github.io/product/" target ="_blank">Parse Product Landing Page - Final Result</a></li>
                 </ul>
-            <h2 id="week-1">Week 1</h2>
+        <h2 id="week-1">Week 1</h2>
                 <p>Today in you class, you learned the basic structure of HTML and how to link up the necessary dependencies (ie: CSS files) on your HTML pages.</p>
 
             <ul>
@@ -167,7 +322,7 @@
                 <span>Generally speaking, metadata goes in the <code>&lt;head&gt;</code> tag, and page content goes in the <code>&lt;body&gt;</code> tag.</span>
             </p>
 
-            <h3>Ways to style your HTML</h3>
+        <h3>Ways to style your HTML</h3>
             <ul>
                 <li>
                     'Inline styling' with the <code>style</code> attribute. In most cases, this is the wrong way to style your web page, but can be handy for testing things out.
@@ -186,7 +341,7 @@
                 <strong>IMPORTANT NOTE!</strong> Inline styles take precedence over styling rules.  Still, you probably shouldn't use them.
             </p>
 
-            <h3>Positioning Elements with CSS</h3>
+        <h3>Positioning Elements with CSS</h3>
             <p>
                 When you use anything other that "static" (the default value for position), you'll be able to use the properties "top", "right", "bottom" and "left" to adjust your elements position, but how it is positioned depends on what value you set position to:
             </p>
@@ -208,7 +363,7 @@
                     <p>positions with respect to the browser window (useful for sticky headers and stuff)</p>
                 </li>
             </ul>
-            <h3>Resources</h3>
+        <h3>Resources</h3>
 
             <ul>
                 <li><a target="_blank" href="https://docs.google.com/forms/d/176JKqMYy1HKKJE9cu5q2_cYLB-dNV0HSJxjrWs2gQhw/viewform" target="_blank">Exit Tickets</a></li>
@@ -248,7 +403,7 @@
                 <li><a target="_blank" href="http://css3.bradshawenterprises.com/">Bradshaw: CSS3, Transitions, Transforms, Animations, and more! </a></li>
             </ul>
 
-            <h3 id="github">Getting Started:</h3>
+        <h3 id="github">Getting Started:</h3>
             <ul>
                 <li><a href="http://techcrunch.com/2012/07/14/what-exactly-is-github-anyway/">What exactly is Github Anyway?</a></li>
                 <li>Sign up for <a target="_blank" href="https://github.com/">GitHub</a> (and verify Email address!!)</li>
@@ -267,7 +422,7 @@
                 </li>
             </ul>
 
-            <h3>A good developer starts his/her day by...</h3>
+        <h3>A good developer starts his/her day by...</h3>
             <ul>
                 <li>Open GitHub. Make sure you start clean... Discard any bad changes!</li>
                 <li>Open Sublime and then open the project folder you are working on.</li>
@@ -275,7 +430,7 @@
                 <li>Arrange your windows in a way that will minimize fussing.  Try making Sublime side by side with Chrome.</li>
             </ul>
 
-            <h2 id="shortcuts">Keyboard Shortcuts</h2>
+        <h2 id="shortcuts">Keyboard Shortcuts</h2>
 
             <table class="table">
                 <tr>
