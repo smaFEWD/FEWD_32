@@ -50,6 +50,10 @@ function renderObjectsFromArray() {
   // same for cast and teaser, then pass these values into renderNewCard(). We'll do this
   // together in class but give it a shot!
   // renderNewCard(image, cast, teaser);
+
+  for (var i = 0; i < movies.length; i++) {
+    renderNewCard(movies[i].image, movies[i].cast, movies[i].teaser);
+  };
 }
 
 function renderObjectOfObjects() {
@@ -120,8 +124,8 @@ function processFlickrData(data) {
 // renderNewCard('1.jpg', 'George Clooney, Mark Wahlberg, Ice Cube', "The Gulf War is over, and three soldiers want to go home rich. Major Archie Gates retires in two weeks. Sergeant Troy Barlow is a new father. Chief Elgin is on a four-month paid vacation from Detroit. Saddam Hussein stole a great deal of gold from Kuwait, and these soldiers have no problem with stealing it from him. But on their way to collect their booty, they bear witness to the the disturbing results of the war effort. President Bush has encouraged Iraqi citizens to fight back against Saddam and pledged to support them, but when they rise up, they get NO American support, and they're getting slaughtered. As the soldiers realize the true situation in Iraq, they're confronted with their own humanity, and they're forced to rethink who they are and what they're doing.");
 
 // renderArray();
-renderObject();
-// renderObjectsFromArray();
+// renderObject();
+renderObjectsFromArray();
 // renderObjectOfObjects();
 
 // renderMoviesAPI();
