@@ -23,7 +23,7 @@
 
                  <h3><a href="#resources">Video and online tutorial resources </a></h3>
 
-                 <h3><a href="https://docs.google.com/spreadsheets/d/1SuoY-oPQHjonCVjjpfG1z0xAiK5_1u0DBL_dRAc8XQ0/edit?usp=sharing">FEWD 32 Class Contact List- Update it here!</a></h3>
+                 <h3><a href="https://docs.google.com/spreadsheets/d/1SuoY-oPQHjonCVjjpfG1z0xAiK5_1u0DBL_dRAc8XQ0/edit?usp=sharing" style="color:red">FEWD 32 Class Contact List- Update it here!</a></h3>
             </div>
         </nav>
         <div class="container content">
@@ -85,24 +85,69 @@
 
             <h2 id="week-10">Week 10</h2>
                 <p>
-                    Today,
-
+                    Today, we will have presentations! GA will have lunch provided. Here's an <a href="http://www.businessinsider.com/what-to-do-15-minutes-before-presentation-2014-5" target="_blank">article </a>to read to you prepare for presentations in case you are nervous. Presentations will be 10-15 minutes per person. Here's a list of ideas of what you want to present:
                     <ul>
-                        <li></li>
-                        <li></li>    
+                        <li>What did you work on? What was the motivation behind your site?</li>
+                        <li>What new tools did you have to use in order to create your website?</li>
+                        <li>What were some of the pitfalls of your project? How did you overcome these problems?</li>
+                        <li>Is it mobile-ready?</li>
+                        <li>What else would you like to work on if you had more time? </li>
+                        <li>Next Steps: How would you like to expand on this project?</li>
 
+                        <h4 style="color:green">Here's a link to your classmates final projets, hosted on Github's gh-pages:</h4>
                     </ul>
 
                   </p>  
 
            <h2 id="week-9">Week 9</h2>
                 <p>
-                    Today,
+                    Today, we worked on implementing a "search box" in the cards project from previous weeks. We also were visited by <a href="https://intro-pres.firebaseapp.com/#/" target="_blank">Sara Robinson </a>from <a href="https://www.firebase.com/" target="_blank">Firebase </a> (sara@firebase.com).  She's a "developer advocate" for Firebase.  Here is Sara's <a href="https://github.com/sararob" target="_blank">Github Link </a> for the presentation. (<a href="parse.com" target="_blank">Parse</a> is also another company that offers a similar service to Firebase--and according to Andy, Parse was created earlier --and does a far better job than Firebase.)  Firebase essentially is a utility that allows you to create a "backend" using a NoSQL Database and a terrific UI.  Below are the links to what we covered to day.  The rest of the day was "lab" - everyone worked on their projects in preparation for their presentation next Sat!
 
                     <ul>
-                        <li></li>
-                        <li></li>    
+                        <li>We started with the <a href="cards-interactive-final.zip" target="_blank">"Cards-Interactive-Final.zip file" from Andy </a></li>   
+                        <li>We added an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank">input field </a>in our <code>index.html</code> file: <pre><code> input id="searchbox" type="search" placeholder="Enter a title:" </pre></code> Be sure to click on the link for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank">input field </a> to see what other types of input fields you can besides a "search box" in html. </li>
+                        <li>We also created a new function called <code>init()</code> This is the for the search box we created in the HTML file using the <code> "input" tag. </code> 
+                        When the user types something, we assign an event listener of "keypress" to the "enter" key (keyCode == 13)</li>
+                            <pre><code>function init(){
+$("#searchbox").keypress(function(e){
+    // console.log(e.keyCode);
 
+    if(e.keyCode == 13) {
+      fetchData(); 
+    }
+  });
+};
+
+init();
+
+// we commented out the fetchData();
+                            </pre></code> 
+                            <li>Lastly, we added additional code in our <code>fetchData()</code> Note the code following the comments in this section to see the changes.</li>
+
+                            <pre><code>function fetchData() {
+  //this forces the container to be empty each time you run this function.
+  $('#cards-container').html('');
+  //this is to set grab the string and search for the title that we are interested in.
+    var query = $('#searchbox').val();
+    // console.log(query);
+    var rawTemplate = $('#thumbnail-template').html();
+
+    $.get('https://ga-movies-lite.firebaseio.com/movies.json', function(movies) {
+      // Stamp out cards and append them into <div id="cards-container"></div>
+      for (var i = 0; i < movies.length; i++) {
+        var currentMovie = movies[i];
+        var title = currentMovie.title;
+
+        //here is where we will compare our "search criteria" to the "movie title"
+
+        if (title.includes(query) == true) {
+             var stampedTemplate = Mustache.render(rawTemplate, currentMovie);
+          $('#cards-container').append(stampedTemplate);
+        }
+
+       
+      }; </pre></code> 
+                        <li>You can download the above "solution" code base from <a href="cards-interactive-final_8.1.15.zip" target="_blank">this zip file.</a></li>
                     </ul>
 
                   </p> 
